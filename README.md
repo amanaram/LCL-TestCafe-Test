@@ -1,11 +1,11 @@
-# create a project folder
-# initiate project using command
+create a project folder
+initiate project using command
 $ npm init
 
-# install npm package using command
+install npm package using command
 $ npm i --save-dev <packagename> testcafe
 
-# create a script folder for scripts
+create a script folder for scripts
 
-# run scripts using command:
+run scripts using command:
 $ testcafe <browsername> <scriptfilename.js>
