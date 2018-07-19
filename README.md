@@ -9,4 +9,4 @@ npm i --save-dev <packagename> testcafe
 create a script folder for scripts
 
 run scripts using command:
-tetcafe <browsername> <scriptfilename.js>
+testcafe <browsername> <scriptfilename.js>
