@@ -1,2 +1,12 @@
-# Run Test in Console 
-$ testcafe chrome techTestAmreeta.js
+create a project folder
+initiate project using command
+npm init
+
+install npm package using command
+
+npm i --save-dev <packagename> testcafe
+
+create a script folder for scripts
+
+run scripts using command:
+tetcafe <browsername> <scriptfilename.js>

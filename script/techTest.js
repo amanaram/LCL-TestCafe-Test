@@ -10,7 +10,9 @@ test('Search for Apples and sort by price', async t => {
     const applesPrice = Selector ('.reg-price-text');
     var sortedPrice = [];
 
+
     await t
+    
         .typeText(searchInput, 'apples')
         .pressKey('enter')
         .click(sortButton);
