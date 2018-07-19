@@ -4,15 +4,30 @@ fixture `Sorting Verification`
     .page('https://www.loblaws.ca/');    
 
 test('Search for Apples and sort by price', async t => {
-    
     const searchInput = Selector('#search-bar');
     const sortButton = Selector('.btn.btn-link.btn-sort-link').nth(2);
     const applesPrice = Selector ('.reg-price-text');
     var sortedPrice = [];
+    const argv = require('yargs').argv;
+    const langFR = Selector('li[data-auid="header-language"]');
+    var lang = null;
+    var size = null;
 
+    if (argv.lang !== undefined) lang = argv.lang;
+    else lang = ['en'];
+
+    if(lang === 'fr'){
+        await t.click(langFR);
+    }
+
+    if (argv.size !== undefined) size = argv.size;
+    else size = ['desktop'];
+
+    if(size < 700){
+        await t.resizeWindow(500,600);
+    }
 
     await t
-    
         .typeText(searchInput, 'apples')
         .pressKey('enter')
         .click(sortButton);
@@ -46,7 +61,7 @@ test('Search for Apples and sort by price', async t => {
 fixture `Deals Present in Results`
     .page('https://www.realcanadiansuperstore.ca/');
 
-test('Search for Oranges with deal badge', async t => {
+    test('Search for Oranges with deal badge', async t => {
     const modal = Selector('.select-province.btn.btn-primary').withText('Ontario');
     const searchBar = Selector('#search-bar');
     const flyerdealExists = Selector('.deal-type');
